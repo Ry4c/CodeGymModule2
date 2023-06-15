@@ -86,6 +86,7 @@ public class MainMenu {
         }while (rank <1 || rank>10);
         Cadres worker1 = new Worker(name, age, gender, address, rank);
         cadresManagement.addCadres(worker1);
+        System.out.println("them thanh cong");
     }
 
     public void addEngineer(){
@@ -108,6 +109,7 @@ public class MainMenu {
         String major = scanner.nextLine();
         Cadres engineer1 = new Engineer(name, age, gender, address, major);
         cadresManagement.addCadres(engineer1);
+        System.out.println("them thanh cong");
     }
     public void addStaff(){
         System.out.println("nhap ten");
@@ -129,5 +131,6 @@ public class MainMenu {
         String job = scanner.nextLine();
         Cadres staff = new Staffs(name, age, gender, address, job);
         cadresManagement.addCadres(staff);
+        System.out.println("them thanh cong");
     }
 }
