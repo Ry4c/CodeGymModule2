@@ -1,4 +1,4 @@
-package excersice2.person;
+package excersice2.model;
 
 public class Person {
     private String name;
