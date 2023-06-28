@@ -1,4 +1,4 @@
-package Exercise;
+package JCollectionFramework.src.exercise;
 
 public class Exercise {
     public static int fryingTimes(int rolls) {
@@ -51,9 +51,9 @@ public class Exercise {
     public static int sumOfThree(int n, int s) {
         int count = 0;
         if (n < s / 3) return 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < (n < s ? n : s); i++) {
             for (int j = 0; j < n; j++) {
-                if (s - i - j >0 && s - i - j < n) count++;
+                if (s - i - j >= 0 && s - i - j < n) count++;
             }
         }
         return count;

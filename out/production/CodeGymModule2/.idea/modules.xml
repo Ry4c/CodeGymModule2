@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Abstract/Abstract.iml" filepath="$PROJECT_DIR$/Abstract/Abstract.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AccessModifier/AccessModifier.iml" filepath="$PROJECT_DIR$/AccessModifier/AccessModifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArrayListAndLinkedList/ArrayListAndLinkedList.iml" filepath="$PROJECT_DIR$/ArrayListAndLinkedList/ArrayListAndLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CleanCode/CleanCode.iml" filepath="$PROJECT_DIR$/CleanCode/CleanCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/CodeGymModule2.iml" filepath="$PROJECT_DIR$/.idea/CodeGymModule2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IOTextfile/IOTextfile.iml" filepath="$PROJECT_DIR$/IOTextfile/IOTextfile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/array/array.iml" filepath="$PROJECT_DIR$/array/array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/draw/draw.iml" filepath="$PROJECT_DIR$/draw/draw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greatestCommonDivisor/greatestCommonDivisor.iml" filepath="$PROJECT_DIR$/greatestCommonDivisor/greatestCommonDivisor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/isPrime/isPrime.iml" filepath="$PROJECT_DIR$/isPrime/isPrime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menuDemo/menuDemo.iml" filepath="$PROJECT_DIR$/menuDemo/menuDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/primeNumber/primeNumber.iml" filepath="$PROJECT_DIR$/primeNumber/primeNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readNumber/readNumber.iml" filepath="$PROJECT_DIR$/readNumber/readNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
     </modules>
   </component>
 </project>

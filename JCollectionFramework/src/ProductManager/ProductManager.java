@@ -1,4 +1,4 @@
-package ProductManager;
+package JCollectionFramework.src.ProductManager;
 
 import java.util.ArrayList;
 import java.util.Comparator;

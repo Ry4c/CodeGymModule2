@@ -1,4 +1,4 @@
-package ProductManager;
+package JCollectionFramework.src.ProductManager;
 
 public class Product {
     private int id;
