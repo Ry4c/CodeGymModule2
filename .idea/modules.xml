@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Abstract/Abstract.iml" filepath="$PROJECT_DIR$/Abstract/Abstract.iml" />
       <module fileurl="file://$PROJECT_DIR$/AccessModifier/AccessModifier.iml" filepath="$PROJECT_DIR$/AccessModifier/AccessModifier.iml" />
       <module fileurl="file://$PROJECT_DIR$/ArrayListAndLinkedList/ArrayListAndLinkedList.iml" filepath="$PROJECT_DIR$/ArrayListAndLinkedList/ArrayListAndLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CaseStudy2/CaseStudy2.iml" filepath="$PROJECT_DIR$/CaseStudy2/CaseStudy2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CleanCode/CleanCode.iml" filepath="$PROJECT_DIR$/CleanCode/CleanCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/CodeGymModule2.iml" filepath="$PROJECT_DIR$/.idea/CodeGymModule2.iml" />
       <module fileurl="file://$PROJECT_DIR$/IOTextfile/IOTextfile.iml" filepath="$PROJECT_DIR$/IOTextfile/IOTextfile.iml" />

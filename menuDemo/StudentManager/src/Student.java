@@ -1,5 +1,6 @@
 public class Student {
-    private String id, name, address;
+    private String name, address;
+    private final String id;
     private int age;
 
     public Student(String id, String name, int age, String address) {
@@ -11,10 +12,6 @@ public class Student {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -47,6 +44,6 @@ public class Student {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", address='" + address;
+                ", address='" + address + '\'';
     }
 }

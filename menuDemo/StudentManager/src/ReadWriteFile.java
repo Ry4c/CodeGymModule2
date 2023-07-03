@@ -12,8 +12,13 @@ public class ReadWriteFile {
                 String line ="";
                 while ((line = br.readLine()) != null){
                     lineData = line.split(",");
-                    Student student = new Student( lineData[0], lineData[1], Integer.parseInt(lineData[2]), lineData[3]);
-                    data.add(student);
+                    try {
+                        Student student = new Student(lineData[0], lineData[1], Integer.parseInt(lineData[2]),
+                                lineData[3] + "," + lineData[4] + "," + lineData[5] + "," + lineData[6]);
+                        data.add(student);
+                    }catch (ArrayIndexOutOfBoundsException e){
+                        System.out.print("");
+                    }
                 }
                 br.close();
                 return data;

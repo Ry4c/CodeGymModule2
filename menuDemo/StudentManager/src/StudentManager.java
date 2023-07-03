@@ -30,12 +30,11 @@ public class StudentManager {
         } else System.out.println("Id da ton tai");
     }
     public void delStudent(String id){
-        if (!isIdExist(id)) System.out.println("khong ton tai ID nay");
-        else {
+        if (isIdExist(id)){
             students.remove(findIndexById(id));
             readWriteFile.writeData(students);
             System.out.println("xoa thanh cong");
-        }
+        }else System.out.println("khong ton tai ID nay");
     }
     public void editStudent(String id, String name, int age, String address){
         if (!isIdExist(id)) System.out.println("khong ton tai ID nay");
@@ -59,7 +58,7 @@ public class StudentManager {
         List<Student> result = new ArrayList<>();
         for (Student s :
                 students) {
-            if (s.getId().contains(id)) result.add(s);
+            if (s.getId().toLowerCase().contains(id.toLowerCase())) result.add(s);
         }
         return result;
     }

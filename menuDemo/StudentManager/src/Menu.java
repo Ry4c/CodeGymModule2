@@ -3,10 +3,12 @@ import java.util.Scanner;
 
 public class Menu {
     StudentManager studentManager;
+    Validate validate;
     Scanner scanner = new Scanner(System.in);
 
     public Menu() {
         studentManager = new StudentManager();
+        validate = new Validate();
     }
 
     public void mainMenu() {
@@ -46,39 +48,45 @@ public class Menu {
 
     private void addMenu() {
         System.out.println("===Them hoc sinh===");
-        studentManager.addStudent(inputdata());
+        studentManager.addStudent(inputStudent());
+        pause();
     }
     private void menuDel(){
         System.out.println("Nhap Id can xoa");
         String id = scanner.nextLine();
         studentManager.delStudent(id);
+        pause();
     }
     private void menuEdit(){
-        Student student = inputdata();
+        Student student = inputStudent();
         studentManager.editStudent(student.getId(), student.getName(),
                 student.getAge(), student.getAddress());
+        pause();
     }
     private void menuSearchName(){
         System.out.println("Nhap ten can tim:");
         String input = scanner.nextLine();
         List<Student> searchResult = studentManager.searchByName(input);
+        if (searchResult.size() == 0) System.out.println("Khong tim thay");
         for (Student s :
                 searchResult) {
             System.out.println(s.toString());
         }
+        pause();
     }
     private void menuSearchId(){
         System.out.println("nhap id:");
         String input = scanner.nextLine();
         List<Student> searchResult = studentManager.searchById(input);
+        if (searchResult.size() == 0) System.out.println("Khong tim thay");
         for (Student s :
                 searchResult) {
             System.out.println(s.toString());
         }
+        pause();
     }
-    private Student inputdata(){
-        System.out.println("Nhap ID:");
-        String id = scanner.nextLine();
+    private Student inputStudent(){
+        String id = validate.validateId();
         System.out.println("Nhap Ten:");
         String name = scanner.nextLine();
         int age = -1;
@@ -91,9 +99,11 @@ public class Menu {
                 System.out.println("nhap lai cho dung");
             }
         }
-        System.out.println("Nhap dia chi");
-        String address = scanner.nextLine();
-        Student student = new Student(id, name, age, address);
-        return student;
+        String address = validate.validateAddress();
+        return new Student(id, name, age, address);
+    }
+    private void pause(){
+        System.out.print("Press Enter to continue");
+        scanner.nextLine();
     }
 }
