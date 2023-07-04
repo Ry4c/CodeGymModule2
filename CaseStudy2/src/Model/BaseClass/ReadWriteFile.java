@@ -49,8 +49,7 @@ public class ReadWriteFile {
             try {
                 if ((lineData = readData.readLine())!= null){
                     String[] data = lineData.split(",");
-                    Student student = new Student(data[0], data[1], data[2], data[3], data[4]);
-                    students.add(student);
+                    students.add( new Student(data[0], data[1], data[2], data[3], data[4]+data[5]+data[6]));
                 }else break;
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -58,14 +57,15 @@ public class ReadWriteFile {
         }
         return students;
     }
-    public Map<String, String> readDataUser(){
-        Map<String, String> users = new HashMap<String, String>();
+    public Map<String, User> readDataUser(){
+        Map<String, User> users = new HashMap();
         String dataLine;
         while (true) {
             try {
                 if ((dataLine = readUser.readLine()) != null){
-                    String[] user = dataLine.split(",");
-                    users.put(user[0], user[1]);
+                    String[] userData = dataLine.split(",");
+                    User user = new User(userData[0], userData[1], Integer.parseInt(userData[2]));
+                    users.put(userData[0], user);
                 } else break;
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -86,11 +86,11 @@ public class ReadWriteFile {
             throw new RuntimeException(e);
         }
     }
-    public void writeUserData(Map map){
+    public void writeUserData(Map<String, User> map){
         Set<String> set = map.keySet();
         String data = "";
         for (String key : set) {
-            data += (key+map.get(key)+"\n");
+            data += (key+","+map.get(key).getPsw()+","+map.get(key).getAccessLevel()+"\n");
         }
         try {
             writeUser.write(data);

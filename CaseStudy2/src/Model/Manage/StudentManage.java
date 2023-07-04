@@ -2,6 +2,7 @@ package Model.Manage;
 
 import Model.BaseClass.ReadWriteFile;
 import Model.BaseClass.Student;
+import Model.BaseClass.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ public class StudentManage implements Manage<Student> {
     public void addNew(Student student) {
         students.add(student);
         readWriteFile.writeStudentData(this.students);
+        UsersManage.users.put(student.getId(), new User(student.getId(),student.getName(),1));
     }
 
     @Override
@@ -42,5 +44,30 @@ public class StudentManage implements Manage<Student> {
                 return i;
         }
         return -1;
+    }
+    public List<Student> searchByName(String name){
+        List<Student> searchResult = new ArrayList<>();
+        for (Student s :
+                students) {
+            if (s.getName().toLowerCase().contains(name.toLowerCase()))
+                searchResult.add(s);
+        }
+        return searchResult;
+    }
+    public List<Student> searchById(String id){
+        List<Student> searchResult = new ArrayList<>();
+        for (Student s :
+                students) {
+            if (s.getName().toLowerCase().contains(id.toLowerCase()))
+                searchResult.add(s);
+        }
+        return searchResult;
+    }
+    public boolean isIdExist(String id) {
+        for (Student s :
+                students) {
+            if (s.getId().equals(id)) return true;
+        }
+        return false;
     }
 }

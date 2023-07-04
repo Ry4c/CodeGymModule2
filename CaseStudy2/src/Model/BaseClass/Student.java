@@ -7,12 +7,12 @@ public class Student {
     private String address;
     private String className;
 
-    public Student(String id, String name, String dateOfBirth, String address, String className) {
+    public Student(String id, String name, String dateOfBirth, String className, String address) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
-        this.address = address;
         this.className = className;
+        this.address = address;
     }
 
     public String getId() {
