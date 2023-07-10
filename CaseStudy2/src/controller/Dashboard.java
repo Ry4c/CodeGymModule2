@@ -8,7 +8,6 @@ import model.manage.StudentManage;
 import model.manage.UsersManage;
 import view.Input;
 import view.MenuData;
-
 import java.util.List;
 import java.util.Random;
 

@@ -7,8 +7,8 @@ import java.util.*;
 
 public class ReadWriteFile {
     ClassManage classManage = new ClassManage();
-    File dataStudent = new File("C:\\Users\\Windows\\Documents\\GitHub\\CodeGymModule2\\CaseStudy2\\src\\model\\base_class\\data\\students.csv");
-    File user = new File("C:\\Users\\Windows\\Documents\\GitHub\\CodeGymModule2\\CaseStudy2\\src\\model\\base_class\\data\\user.csv");
+    File dataStudent = new File("CaseStudy2/src/model/base_class/data/students.csv");
+    File user = new File("CaseStudy2/src/model/base_class/data/user.csv");
 
     public List<Student> readDataStudent() {
         List<Student> students = new ArrayList<>();
