@@ -1,23 +1,27 @@
-package Model.Manage;
+package model.manage;
 
-import Model.BaseClass.ReadWriteFile;
-import Model.BaseClass.Student;
-import Model.BaseClass.User;
+import model.base_class.ReadWriteFile;
+import model.base_class.Student;
+import model.base_class.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StudentManage implements Manage<Student> {
-    List<Student> students;
+    static List<Student> students;
     ReadWriteFile readWriteFile = new ReadWriteFile();
+    ClassManage classManage = new ClassManage();
+    UsersManage usersManage = new UsersManage();
 
-    public StudentManage(List<Student> students) { this.students = readWriteFile.readDataStudent(); }
+    public StudentManage() {
+        this.students = readWriteFile.readDataStudent();
+    }
 
     @Override
     public void addNew(Student student) {
         students.add(student);
         readWriteFile.writeStudentData(this.students);
-        UsersManage.users.put(student.getId(), new User(student.getId(),student.getName(),1));
+        usersManage.addNew(new User(student.getId(), student.getId(), 1));
     }
 
     @Override
@@ -25,6 +29,7 @@ public class StudentManage implements Manage<Student> {
         if (findIndexById(id) != -1) {
             students.remove(findIndexById(id));
             readWriteFile.writeStudentData(this.students);
+            usersManage.delete(id);
         }
     }
 
@@ -32,9 +37,9 @@ public class StudentManage implements Manage<Student> {
     public void edit(Student student) {
         int index = findIndexById(student.getId());
         students.get(index).setName(student.getName());
-        students.get(index).setName(student.getDateOfBirth());
-        students.get(index).setName(student.getAddress());
-        students.get(index).setName(student.getClassName());
+        students.get(index).setDateOfBirth(student.getDateOfBirth());
+        students.get(index).setAddress(student.getAddress());
+        students.get(index).setClassName(student.getClassName());
         readWriteFile.writeStudentData(this.students);
     }
 
@@ -45,7 +50,8 @@ public class StudentManage implements Manage<Student> {
         }
         return -1;
     }
-    public List<Student> searchByName(String name){
+
+    public List<Student> searchByName(String name) {
         List<Student> searchResult = new ArrayList<>();
         for (Student s :
                 students) {
@@ -54,7 +60,8 @@ public class StudentManage implements Manage<Student> {
         }
         return searchResult;
     }
-    public List<Student> searchById(String id){
+
+    public List<Student> searchById(String id) {
         List<Student> searchResult = new ArrayList<>();
         for (Student s :
                 students) {
@@ -63,11 +70,19 @@ public class StudentManage implements Manage<Student> {
         }
         return searchResult;
     }
+
     public boolean isIdExist(String id) {
         for (Student s :
                 students) {
             if (s.getId().equals(id)) return true;
         }
         return false;
+    }
+
+    public String getClassnameById(String id) {
+        for (Student s : students) {
+            if (s.getId().equals(id)) return s.getClassName();
+        }
+        return "";
     }
 }

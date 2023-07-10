@@ -1,9 +1,10 @@
-package Model.BaseClass;
+package model.base_class;
 
 public class User {
     private String userName;
     private String password;
     private int accessLevel;
+    ReadWriteFile readWriteFile = new ReadWriteFile();
 
     public User(String userName, String password, int accessLevel) {
         this.userName = userName;

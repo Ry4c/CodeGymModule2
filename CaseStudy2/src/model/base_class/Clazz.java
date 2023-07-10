@@ -1,7 +1,4 @@
-package Model.BaseClass;
-
-import Model.BaseClass.Student;
-import Model.Manage.Manage;
+package model.base_class;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +20,7 @@ public class Clazz {
         classMate.remove(findIndexById(id));
     }
 
-    public int findIndexById (String id){
+    public int findIndexById(String id) {
         for (int i = 0; i < classMate.size(); i++) {
             if (classMate.get(i).getId().equals(id))
                 return i;

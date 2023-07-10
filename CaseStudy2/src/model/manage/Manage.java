@@ -1,4 +1,4 @@
-package Model.Manage;
+package model.manage;
 
 public interface Manage<E> {
     void addNew(E e);

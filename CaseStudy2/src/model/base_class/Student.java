@@ -1,4 +1,4 @@
-package Model.BaseClass;
+package model.base_class;
 
 public class Student {
     private String id;
@@ -13,6 +13,7 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
         this.className = className;
         this.address = address;
+
     }
 
     public String getId() {
